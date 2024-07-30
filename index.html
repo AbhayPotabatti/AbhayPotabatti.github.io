@@ -3,121 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Meet and Talk</title>
+    <title>Message</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url('https://images.unsplash.com/photo-1506748686214e9df14f5e1b8d3b77de?fit=crop&w=1920&h=1080') no-repeat center center fixed;
-            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
+            padding: 50px;
         }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 80%;
-            max-width: 600px;
+        .message-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
         }
-
-        h1 {
-            font-size: 2.5em;
+        .message-box h2 {
             color: #333;
         }
-
-        .message {
-            font-size: 1.2em;
-            margin: 20px 0;
+        .message-box p {
             color: #666;
-        }
-
-        .telugu-message {
-            font-size: 1.2em;
-            margin: 20px 0;
-            color: #666;
-            font-family: 'Noto Sans Telugu', sans-serif;
-        }
-
-        button {
-            padding: 15px 25px;
             font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            color: #fff;
-            transition: background-color 0.3s, transform 0.2s;
-            margin: 10px;
-            outline: none;
         }
-
-        #meetBtn {
-            background-color: #4CAF50; /* Green */
-        }
-
-        #notNowBtn {
-            background-color: #FF5733; /* Red */
-        }
-
-        #meetBtn:hover, #notNowBtn:hover {
-            transform: scale(1.1);
-        }
-
-        .response {
-            font-size: 1.2em;
-            margin-top: 20px;
-            color: #333;
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap');
     </style>
 </head>
 <body>
-    <div class="container" id="initialScreen">
-        <h1>Hello!</h1>
-        <p class="telugu-message">neevu ela unnaavu! nako personal vishayam cheptava anukuntunnanu. memu malli kalavagalama? mukhamukhiga matladite manchi ga untundhi anukuntunnanu.</p>
-        <button id="meetBtn">Yes, Let's Meet</button>
-        <button id="notNowBtn">Maybe Later</button>
-        <div class="response hidden" id="responseMessage">
-            <p>Thank you for your response! Looking forward to hearing from you.</p>
-        </div>
+    <div class="message-box">
+        <h2>సారే, మనం వ్యక్తిగతంగా మాట్లాడాలని ఉంది</h2>
+        <p>నీవు ఏమన్నా నాకోసం మాట్లాడవా? మాకు ముఖాముఖి మాట్లాడితే బాగుంటుంది.</p>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const meetBtn = document.getElementById('meetBtn');
-            const notNowBtn = document.getElementById('notNowBtn');
-            const responseMessage = document.getElementById('responseMessage');
-            const initialScreen = document.getElementById('initialScreen');
-
-            meetBtn.addEventListener('click', () => {
-                responseMessage.innerHTML = '<p>Great! Looking forward to our meeting. 😊</p>';
-                responseMessage.classList.remove('hidden');
-                meetBtn.disabled = true;
-                notNowBtn.disabled = true;
-                meetBtn.style.backgroundColor = '#388E3C'; // Darker Green
-                notNowBtn.style.backgroundColor = '#E57373'; // Lighter Red
-                meetBtn.innerText = 'Awesome!';
-                notNowBtn.innerText = 'Thanks!';
-            });
-
-            notNowBtn.addEventListener('click', () => {
-                responseMessage.innerHTML = '<p>No worries! Let me know when you’re ready.</p>';
-                responseMessage.classList.remove('hidden');
-                meetBtn.disabled = true;
-                notNowBtn.disabled = true;
-                meetBtn.style.backgroundColor = '#388E3C'; // Darker Green
-                notNowBtn.style.backgroundColor = '#E57373'; // Lighter Red
-                meetBtn.innerText = 'Thanks!';
-                notNowBtn.innerText = 'Catch Up Later';
-            });
-        });
-    </script>
 </body>
 </html>
+
 
