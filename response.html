@@ -3,42 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Share Your Thoughts</title>
+    <title>Hey [Her Name], Just Checking In</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; background-color: #f9f9f9; margin: 0; padding: 0; }
         .container { padding: 20px; max-width: 600px; margin: auto; }
         h1 { color: #333; }
         p { color: #555; }
-        textarea { width: 100%; height: 150px; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
         .button { padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; }
-        .response-container { display: none; } /* Hide response section initially */
+        form { margin-top: 20px; }
+        textarea { width: 100%; height: 150px; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        .form-group { margin-bottom: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Share Your Thoughts</h1>
-        <p>Feel free to share whatever is on your mind below. There’s no pressure, just hoping to understand better.</p>
+        <h1>Hey [Her Name], I Hope You’re Doing Well</h1>
+        <p>I've noticed that I haven't heard from you in a while, and I just wanted to check in to see if everything is okay. If there's something on your mind or if you need space, I completely understand.</p>
+        <p>Feel free to share anything you’re comfortable with below, or just know that I’m here if you need to talk.</p>
 
-        <form id="responseForm">
-            <textarea id="responseText" placeholder="Your response here..."></textarea>
-            <br>
-            <button type="button" onclick="submitResponse()" class="button">Submit</button>
+        <form action="your-email-handling-script" method="post">
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Feel free to share your thoughts here..."></textarea>
+            </div>
+            <button type="submit" class="button">Send</button>
         </form>
-
-        <div id="responseContainer" class="response-container">
-            <h2>Your Response:</h2>
-            <p id="responseDisplay"></p>
-        </div>
     </div>
-
-    <script>
-        function submitResponse() {
-            var responseText = document.getElementById('responseText').value;
-            document.getElementById('responseContainer').style.display = 'block';
-            document.getElementById('responseDisplay').innerText = responseText;
-
-            // Optionally, you can send the response to your email or save it using server-side code
-        }
-    </script>
 </body>
 </html>
+
